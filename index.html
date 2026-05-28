@@ -4,239 +4,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="Icones/Icone1.jpg" rel="icon">
-    <title>Eloy Agostinho Come</title>
+    <title>Eloy Agostinho Come | Portfólio</title>
 
-    
+<link rel="stylesheet" href="CSS/index-pr.css">
+    <link href="Icones/Eloy.jpg" rel="Eloy Agostinho Come">
 
-    <style>
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
-
-        body {
-            width: 100%;
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 15px;
-            font-family: system-ui, sans-serif;
-            background-color: #001219;
-            color: #ffffff;
-            line-height: 1.6;
-        }
-
-        .main-container {
-            background-color: #001822;
-            padding: 25px;
-            border-radius: 12px;
-            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.6);
-            border: 1px solid #0a9396;
-            margin-top: 15px;
-        }
-
-        h1 {
-            font-family: 'Times New Roman', Times, serif;
-            font-size: 2.5rem;
-            text-align: center;
-            margin-top: 10px;
-            color: #e9d8a6;
-        }
-
-        h2 {
-            font-size: 1.3rem;
-            color: #94d2bd;
-            border-bottom: 2px solid #0a9396;
-            padding-bottom: 5px;
-            margin-top: 30px;
-            margin-bottom: 15px;
-        }
-
-        p {
-            font-size: 1rem;
-            text-align: justify;
-            margin-bottom: 15px;
-        }
-
-        .IG {
-            text-align: center;
-            padding: 15px 0;
-        }
-
-        .IG img {
-            height: 130px;
-            width: 130px;
-            border: 3px solid #0a9396;
-            border-radius: 50%;
-            object-fit: cover;
-            box-shadow: 0 0 15px rgba(10, 147, 150, 0.5);
-        }
-
-        .info-pessoal {
-            list-style: none;
-            margin: 20px 0;
-        }
-
-        .info-pessoal li {
-            margin-bottom: 10px;
-            font-size: 1.05rem;
-        }
-
-        .info-pessoal strong {
-            color: #e9d8a6;
-        }
-
-        .box-interativa {
-            background-color: #001e26;
-            border: 2px dashed #0a9396;
-            border-radius: 10px;
-            padding: 20px;
-            margin: 30px 0;
-            text-align: center;
-        }
-
-        .btn-js {
-            background-color: #0a9396;
-            color: white;
-            border: none;
-            padding: 10px 20px;
-            font-size: 1rem;
-            font-weight: bold;
-            border-radius: 5px;
-            cursor: pointer;
-            transition: 0.3s;
-        }
-
-        .btn-js:hover {
-            background-color: #94d2bd;
-            color: #001219;
-        }
-
-        .conteudo-dinamico {
-            margin-top: 20px;
-            text-align: left;
-            display: none;
-        }
-
-        .secao-projetos {
-            background-color: #00222e;
-            border: 2px solid #0a9396;
-            border-radius: 10px;
-            padding: 20px;
-            margin: 30px 0;
-        }
-
-        .abas-container {
-            display: flex;
-            gap: 10px;
-            margin-bottom: 15px;
-        }
-
-        .btn-aba {
-            flex: 1;
-            padding: 12px;
-            background-color: #001219;
-            border: 1px solid #0a9396;
-            color: #94d2bd;
-            font-weight: bold;
-            border-radius: 6px;
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-
-        .btn-aba:hover,
-        .btn-aba.active {
-            background-color: #00f5d4;
-            color: #001219;
-            border-color: #00f5d4;
-        }
-
-        .progress-container {
-            width: 100%;
-            height: 4px;
-            background-color: #001219;
-            border-radius: 2px;
-            overflow: hidden;
-            margin-bottom: 15px;
-            display: none;
-        }
-
-        .progress-bar {
-            width: 0%;
-            height: 100%;
-            background-color: #00f5d4;
-            transition: width 0.3s ease;
-        }
-
-        .visor-projeto {
-            background-color: #001219;
-            border: 1px solid #0a9396;
-            border-radius: 6px;
-            padding: 15px;
-            min-height: 80px;
-        }
-
-        .fecho {
-            text-align: center;
-            padding: 15px;
-            background-color: #1d3557;
-            border: 2px solid #0a9396;
-            border-radius: 8px;
-            font-size: 1.2rem;
-            font-style: italic;
-            margin-top: 30px;
-        }
-
-        footer {
-            background-color: #00252e;
-            padding: 25px 15px;
-            text-align: center;
-            margin-top: 40px;
-            border-radius: 8px 8px 0 0;
-        }
-
-        .footer-links {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            flex-wrap: wrap;
-            margin-bottom: 20px;
-        }
-
-        .footer-img {
-            width: 40px;
-            height: 40px;
-            border: 2px solid #94d2bd;
-            border-radius: 50%;
-            transition: 0.2s;
-        }
-
-        .footer-img:hover {
-            transform: scale(1.1);
-        }
-
-        #status-offline {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100vw;
-            height: 100vh;
-            background-color: #001219;
-            display: none;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            z-index: 10000;
-            padding: 20px;
-            text-align: center;
-        }
-
-        .robo-animado {
-            font-size: 70px;
-            margin-bottom: 20px;
-        }
-    </style>
+  
 </head>
 
 <body>
@@ -259,7 +32,7 @@
     <div class="main-container">
 
         <div class="IG">
-            <img src="Icones/IMGcapa1.jpg" alt="Foto">
+            <img src="Icones/Eloy Agostinho Come.jpg" alt="Foto">
         </div>
 
         <h1>Eloy Agostinho Come</h1>
@@ -271,16 +44,17 @@
         <h2>Sobre Mim</h2>
 
         <p>
-            Sou apaixonado por eletrónica, programação e pelo desenvolvimento de projectos tecnológicos. Se deseja esclarecer dúvidas, partilhar ideias ou conversar sobre tecnologia, encontrará todos os meus canais de comunicação no rodapé desta página. Sinta-se à vontade para entrar em contacto através do WhatsApp, chamada, SMS, e-mail ou visitando a minha página do Facebook. Estou sempre disponível para novas conexões, projetos e amizades.
+            Sou apaixonado por eletrônica, programação e desenvolvimento de projetos tecnológicos.
+             Se deseja falar comigo, tirar duvidas, partilhar ideias ou conversar sobre tecnologia e eletrônica, pode clicar no botão "contactos" no cabeçalho e teras os Icones de contactos. Fale comigo atraves do WhatsApp, chamadas, SMS, email ou acesse a minha pagina do facebook. Estou sempre disponível para novas conexões, projectos e amizades.
         </p>
 
         <h2>Informações Pessoais</h2>
 
         <ul class="info-pessoal">
-            <li><strong>Idade:</strong> 21</li>
-            <li><strong>Nacionalidade:</strong>  Moçambicana</li>
-            <li><strong>Cidade:</strong> Maputo</li>
-            <li><strong>Especialidades: </strong>  Eletrônica Analógica e Web Development</li>
+            <li><strong>Idade:</strong>21</li>
+            <li><strong>Nacionalidade:</strong> Moçambicana</li>
+            <li><strong>Cidade:</strong>Maputo</li>
+            <li><strong>Especialidades:</strong> Eletrônica Analógica e Web Development</li>
 
         </ul>
 
@@ -298,8 +72,8 @@
             <div id="infoEletronica" class="conteudo-dinamico">
 
                 <p>
-                   A eletrónica é o cérebro e o coração da tecnologia moderna. Desde o mais simples circuito residencial até aos supercomputadores mais avançados, tudo depende da engenharia minuciosa que molda e controla a energia elétrica. Dominar esta área é adquirir a capacidade de transformar ideias abstratas em soluções reais e inovadoras que movem o mundo.
- Mais abaixo, no nosso Painel de Projetos, preparei um espaço interativo com módulos dedicados aos componentes fundamentais da eletrónica. Explore e descubra como pequenos elementos transformam a tecnologia!
+                    A eletrônica é a base da tecnologia moderna, permitindo criar circuitos inteligentes e soluções inovadoras.
+                    De seguida teremos o painel de projectos onde teremos aulas sobre alguns componentes mais usados na eletronica. 
                 </p>
 
             </div>
@@ -362,11 +136,11 @@
                 </a>
 
                 <a href="https://www.facebook.com/profile.php?id=61586937477414" target="_blank">
-                    <img class="footer-img" src="Icones/facebook.jpg">
+                    <img class="footer-img" src="Icones/Facebook.jpg">
                 </a>
 
               <a href="sms:+258849231525?body=Ola%20Eloy%20Come,%20puxei%20o%20teu%20site.%20Podemos%20conversar%20?" class="footer-link">
-                    <img class="footer-img" src="Icones/chat.jpg" alt="Chat">
+                    <img class="footer-img" src="chat.jpg" alt="Chat">
 
                 <a href="tel:+258849231525">
                     <img class="footer-img" src="Icones/chamada.jpg">
@@ -483,7 +257,7 @@
                 if (idProjeto === "capacitores") {
 
                     window.location.href =
-                        "capacitor/index.html";
+                        "capacitor/index.html"
                 }
 
                 if (idProjeto === "resistores") {

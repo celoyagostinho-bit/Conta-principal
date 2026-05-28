@@ -6,303 +6,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Resistor</title>
-    <link href="ImagemResistor/Icone1.jpg" rel="icon">
-    <link rel="stylesheet" href="offline.Css">
-    <style>
-        /* --- ESTILIZAÇÃO COMPATÍVEL COM TODOS OS TAMANHOS DE TELA --- */
-        * { box-sizing: border-box; margin: 0; padding: 0; }
-
-        body {
-            background-color: #0b0f19;
-            color: #f8f9fa;
-            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-            font-size: 16px;
-            line-height: 1.6;
-            padding: 0 15px;
-        }
-
-        .container {
-            width: 100%;
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 20px 0;
-        }
-
-/* --- NOVA ESTILIZAÇÃO DO HEADER HORIZONTAL --- */
-header {
-    background-color: #111827;
-    border-bottom: 2px solid #0a9396;
-    padding: 15px 20px;
-    margin-bottom: 30px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-}
-
-.nav-horizontal {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    max-width: 800px;
-    margin: 0 auto;
-}
-
-.nav-brand span {
-    font-family: Arial, sans-serif;
-    font-size: 1.3rem;
-    font-weight: bold;
-    color: #e9d8a6;
-    letter-spacing: 1px;
-}
-
-.nav-menu {
-    display: flex;
-    list-style: none;
-    gap: 20px;
-}
-
-.nav-menu a {
-    color: #00f5d4;
-    text-decoration: none;
-    font-weight: 600;
-    font-size: 0.95rem;
-    font-family: Arial, sans-serif;
-    padding: 6px 12px;
-    border-radius: 4px;
-    border: none; /* Remove a linha tracejada antiga */
-    transition: all 0.2s ease-in-out;
-}
-
-.nav-menu a:hover {
-    color: #0b0f19;
-    background-color: #00f5d4;
-    box-shadow: 0 0 8px rgba(0, 245, 212, 0.4);
-}
- .IG img {
-            height: 70px;
-            width: 70px;
-            border: 3px solid #0a9396;
-            border-radius: 50%;
-            object-fit: cover;
-            box-shadow: 0 0 15px rgba(10, 147, 150, 0.5);
-        }
-
-/* Ajuste Responsivo para telas pequenas */
-@media (max-width: 480px) {
-    .nav-horizontal {
-        flex-direction: column;
-        gap: 10px;
-    }
-    .nav-menu {
-        gap: 10px;
-    }
-    .nav-menu a {
-        font-size: 0.85rem;
-        padding: 4px 8px;
-    }
-}
-
-
-        /* --- TIPOGRAFIA --- */
-        h1 {
-            font-family: 'Times New Roman', Times, serif;
-            font-size: 2.8rem;
-            color: #e9d8a6;
-            margin-bottom: 20px;
-            border-bottom: 3px solid #0a9396;
-            padding-bottom: 5px;
-        }
-
-        h2, h3 {
-            font-family: Arial, sans-serif;
-            font-size: 1.4rem;
-            color: #94d2bd;
-            margin-top: 35px;
-            margin-bottom: 15px;
-        }
-
-        p {
-            font-size: 1.05rem;
-            font-family: 'Georgia', serif;
-            color: #e5e7eb;
-            text-align: justify;
-            margin-bottom: 15px;
-        }
-
-        strong { color: #00f5d4; }
-
-        /* --- ILUSTRAÇÕES E IMAGENS --- */
-        figure {
-            text-align: center;
-            margin: 25px auto;
-            background-color: #111827;
-            padding: 15px;
-            border-radius: 10px;
-            border: 1px solid #1f2937;
-            max-width: 100%;
-        }
-
-        figure img {
-            max-width: 100%;
-            height: auto;
-            border-radius: 6px;
-            border: 1px solid #374151;
-        }
-
-        /* --- CALCULADORA DO PROJETO --- */
-        fieldset {
-            border: 2px solid #00f5d4;
-            border-radius: 12px;
-            padding: 25px;
-            max-width: 500px;
-            margin: 40px auto;
-            background-color: #111827;
-            box-shadow: 0 8px 20px rgba(0, 245, 212, 0.1);
-        }
-
-        legend {
-            font-weight: bold;
-            color: #00f5d4;
-            padding: 0 10px;
-            font-size: 1.2rem;
-            text-align: center;
-        }
-
-        label {
-            display: block;
-            margin-top: 15px;
-            font-size: 0.9rem;
-            color: #9ca3af;
-            font-weight: bold;
-        }
-
-        input, select, button {
-            width: 100%;
-            padding: 12px;
-            margin-top: 6px;
-            background-color: #0b0f19;
-            border: 1px solid #374151;
-            border-radius: 6px;
-            color: white;
-            font-size: 1rem;
-            transition: all 0.3s;
-        }
-
-        input:focus, select:focus {
-            outline: none;
-            border-color: #00f5d4;
-            box-shadow: 0 0 8px rgba(0, 245, 212, 0.2);
-        }
-
-        button {
-            background-color: #00f5d4;
-            color: #0b0f19;
-            font-weight: bold;
-            border: none;
-            cursor: pointer;
-            margin-top: 20px;
-        }
-
-        button:hover {
-            background-color: #94d2bd;
-            box-shadow: 0 0 12px rgba(148, 210, 189, 0.4);
-        }
-
-        h5#resultado {
-            margin-top: 20px;
-            font-size: 1.2rem;
-            color: #e9d8a6;
-            text-align: center;
-        }
-
-        #detalhe {
-            text-align: center;
-            font-family: monospace;
-            color: #94d2bd;
-            font-size: 1.1rem;
-            margin-top: 5px;
-        }
-
-        /* --- SESSÕES DE ENCERRAMENTO --- */
-        .agradecer {
-            padding: 50px 0;
-            font-size: 1.8rem;
-            text-align: center;
-            font-style: italic;
-            color: #e9d8a6;
-        }
-
-        .fecho {
-            text-align: center;
-            padding: 15px;
-            color: white;
-            background-color: #1d3557;
-            border: 1px solid #0a9396;
-            border-radius: 8px;
-            font-style: italic;
-            font-size: 1.1rem;
-        }
-
-        /* --- RODAPÉ --- */
-        footer {
-            background-color: #00252e;
-            color: white;
-            padding: 30px 15px;
-            text-align: center;
-            margin-top: 40px;
-            border-radius: 12px 12px 0 0;
-            border-top: 1px solid #0a9396;
-        }
-
-        .footer-links {
-            display: flex;
-            justify-content: center;
-            gap: 25px;
-            flex-wrap: wrap;
-            margin-bottom: 20px;
-        }
-
-        .footer-link {
-            text-decoration: none;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            color: #9ca3af;
-            font-size: 0.75rem;
-            transition: color 0.2s;
-        }
-
-        .footer-link:hover { color: #00f5d4; }
-
-        .footer-img {
-            width: 40px;
-            height: 40px;
-            border: 2px solid #374151;
-            border-radius: 50%;
-            margin-bottom: 6px;
-            transition: transform 0.2s;
-        }
-
-        .footer-link:hover .footer-img {
-            transform: scale(1.1);
-            border-color: #00f5d4;
-        }
-
-        .footer-copyright {
-            font-size: 0.85rem;
-            color: #4b5563;
-        }
-
-        /* --- MEDIA QUERIES --- */
-        @media (max-width: 600px) {
-            h1 { font-size: 2.2rem; }
-            h2, h3 { font-size: 1.2rem; }
-            p { font-size: 0.95rem; }
-            fieldset { padding: 15px; }
-        }
-        
-    </style>
+    <link href="../Icones/Eloy.jpg" rel="Eloy Agostinho Come">
+    <link rel="stylesheet" href="../CSS/index.css">
+   
 
 </head>
 
@@ -313,7 +19,7 @@ header {
   <header>
     <nav class="nav-horizontal">
         <div class="nav-brand">
-          <lu class="nav-menu"> <li><a class="IG" href="../index.html"><img src="ImagemResistor/IMGcapa1.jpg" alt="Foto"></a></li>
+          <lu class="nav-menu"> <li><a class="IG" href="../index.html"><img src="../Icones/Eloy Agostinho Come.jpg" alt="Foto"></a></li>
             <span>Eloy Agostinho Come</span></lu>
         </div>
         <ul class="nav-menu">
@@ -672,26 +378,26 @@ header {
         <p class="fecho">
            Inovação, Tecnologia  e  Eletrônica
         </p>
-  <footer id="foot">
+ <footer id="foot">
             <div class="footer-links">
                 <a href="https://wa.me/849231525" class="footer-link" target="_blank">
-                    <img class="footer-img" src="ImagemResistor/WhatsApp.jpg" alt="WhatsApp">
+                    <img class="footer-img" src="../Icones/whatsApp.jpg" alt="WhatsApp">
                     
                 </a>
                  <a href="https://www.facebook.com/profile.php?id=61586937477414" target="_blank">
-                    <img class="footer-img" src="ImagemResistor/Facebook.jpg" alt="Facebook">
+                    <img class="footer-img" src="../Icones/facebook.jpg" alt="Facebook">
                     
                 </a>
                 <a href="sms:+258849231525?body=Ola%20Eloy%20Come,%20puxei%20o%20teu%20site.%20Podemos%20conversar%20?" class="footer-link">
-                    <img class="footer-img" src="ImagemResistor/chat.jpg" alt="Chat">
+                    <img class="footer-img" src="../Icones/chat.jpg" alt="Chat">
                    
                 </a>
                 <a href="tel:+258849231525" class="footer-link">
-                    <img class="footer-img" src="ImagemResistor/chamada.jpg" alt="Telefone">
+                    <img class="footer-img" src="../Icones/chamada.jpg" alt="Telefone">
                    
                 </a>
                 <a href="mailto:celoyagostinho@gmail.com" class="footer-link">
-                    <img class="footer-img" src="ImagemResistor/gmail.jpg" alt="Gmail">
+                    <img class="footer-img" src="../Icones/gmail.jpg" alt="Gmail">
                   
                 </a>
             </div>
@@ -699,6 +405,7 @@ header {
                 &copy; 2026 Todos os direitos reservados.
             </p>
         </footer>
+
 
 
             <script>
