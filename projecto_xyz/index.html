@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="pt-pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eloy Agostinho Come | Portfólio</title>
+
+<link rel="stylesheet" href="CSS/index-pr.css">
+    <link href="Icones/Eloy.jpg" rel="Eloy Agostinho Come">
+
+  
+</head>
+
+<body>
+
+    <!-- OFFLINE -->
+    <div id="status-offline">
+        <div class="robo-animado">
+            🤖❌
+        </div>
+
+        <h2 style="border:none; color:#e9d8a6;">
+            Sem conexão com a internet
+        </h2>
+
+        <p style="max-width:500px; color:#94d2bd;">
+            Verifique a sua conexão para continuar.
+        </p>
+    </div>
+
+    <div class="main-container">
+
+        <div class="IG">
+            <img src="Icones/Eloy Agostinho Come.jpg" alt="Foto">
+        </div>
+
+        <h1>Eloy Agostinho Come</h1>
+
+        <p style="text-align:center; color:#94d2bd;">
+            Estudante de Eletrônica
+        </p>
+
+        <h2>Sobre Mim</h2>
+
+        <p>
+            Sou apaixonado por eletrônica, programação e desenvolvimento de projetos tecnológicos.
+             Se deseja falar comigo, tirar duvidas, partilhar ideias ou conversar sobre tecnologia e eletrônica, pode clicar no botão "contactos" no cabeçalho e teras os Icones de contactos. Fale comigo atraves do WhatsApp, chamadas, SMS, email ou acesse a minha pagina do facebook. Estou sempre disponível para novas conexões, projectos e amizades.
+        </p>
+
+        <h2>Informações Pessoais</h2>
+
+        <ul class="info-pessoal">
+            <li><strong>Idade:</strong>21</li>
+            <li><strong>Nacionalidade:</strong> Moçambicana</li>
+            <li><strong>Cidade:</strong>Maputo</li>
+            <li><strong>Especialidades:</strong> Eletrônica Analógica e Web Development</li>
+
+        </ul>
+
+        <!-- INTERAÇÃO -->
+        <div class="box-interativa">
+
+            <p>
+                Quer entender por que escolhi eletrônica?
+            </p>
+
+            <button class="btn-js" onclick="mostrarEletronica()">
+                Descobrir
+            </button>
+
+            <div id="infoEletronica" class="conteudo-dinamico">
+
+                <p>
+                    A eletrônica é a base da tecnologia moderna, permitindo criar circuitos inteligentes e soluções inovadoras.
+                    De seguida teremos o painel de projectos onde teremos aulas sobre alguns componentes mais usados na eletronica. 
+                </p>
+
+            </div>
+        </div>
+
+        <!-- PROJETOS -->
+        <h2>Painel de Projetos</h2>
+
+        <div class="secao-projetos">
+
+            <p style="color:#94d2bd;">
+                Escolha um módulo:
+            </p>
+
+            <div class="abas-container">
+
+                <button class="btn-aba"
+                    id="aba-capacitores"
+                    onclick="processarAba('capacitores')">
+
+                    Capacitores
+                </button>
+
+                <button class="btn-aba"
+                    id="aba-resistores"
+                    onclick="processarAba('resistores')">
+
+                    Resistores
+                </button>
+
+            </div>
+
+            <!-- BARRA -->
+            <div class="progress-container" id="container-barrinha">
+                <div class="progress-bar" id="barrinha-dinamica"></div>
+            </div>
+
+            <!-- VISOR -->
+            <div class="visor-projeto" id="visor-conteudo">
+
+                <p style="text-align:center; color:#6c757d;">
+                    Nenhum módulo carregado.
+                </p>
+
+            </div>
+
+        </div>
+
+        <p class="fecho">
+            Inovação, Tecnologia  e  Eletrônica
+        </p>
+
+        <!-- FOOTER -->
+        <footer>
+
+            <div class="footer-links">
+
+                <a href="https://wa.me/849231525" target="_blank">
+                    <img class="footer-img" src="Icones/WhatsApp.jpg">
+                </a>
+
+                <a href="https://www.facebook.com/profile.php?id=61586937477414" target="_blank">
+                    <img class="footer-img" src="Icones/Facebook.jpg">
+                </a>
+
+              <a href="sms:+258849231525?body=Ola%20Eloy%20Come,%20puxei%20o%20teu%20site.%20Podemos%20conversar%20?" class="footer-link">
+                    <img class="footer-img" src="chat.jpg" alt="Chat">
+
+                <a href="tel:+258849231525">
+                    <img class="footer-img" src="Icones/chamada.jpg">
+                </a>
+
+                <a href="mailto:celoyagostinho@gmail.com">
+                    <img class="footer-img" src="Icones/gmail.jpg">
+                </a>
+
+            </div>
+
+            <p>
+                &copy; 2026 Todos os direitos reservados.
+            </p>
+
+        </footer>
+
+    </div>
+
+    <!-- JAVASCRIPT -->
+    <script>
+
+        // MONITORAR INTERNET
+        function monitorarRede() {
+
+            const telaErro =
+                document.getElementById("status-offline");
+
+            if (!navigator.onLine) {
+
+                telaErro.style.display = "flex";
+
+            } else {
+
+                telaErro.style.display = "none";
+            }
+        }
+
+        window.addEventListener('online', monitorarRede);
+        window.addEventListener('offline', monitorarRede);
+
+        monitorarRede();
+
+        // MOSTRAR ELETRÔNICA
+        function mostrarEletronica() {
+
+            const caixa =
+                document.getElementById("infoEletronica");
+
+            if (caixa.style.display === "block") {
+
+                caixa.style.display = "none";
+
+            } else {
+
+                caixa.style.display = "block";
+            }
+        }
+
+        // PROCESSAMENTO DAS ABAS
+        function processarAba(idProjeto) {
+
+            const visor =
+                document.getElementById("visor-conteudo");
+
+            const wrapperBarrinha =
+                document.getElementById("container-barrinha");
+
+            const barrinha =
+                document.getElementById("barrinha-dinamica");
+
+            // ATIVAR BOTÃO
+            document.querySelectorAll('.btn-aba')
+                .forEach(btn => btn.classList.remove('active'));
+
+            if (idProjeto === 'capacitores') {
+
+                document.getElementById('aba-capacitores')
+                    .classList.add('active');
+
+            }
+
+            if (idProjeto === 'resistores') {
+
+                document.getElementById('aba-resistores')
+                    .classList.add('active');
+            }
+
+            // BARRA
+            wrapperBarrinha.style.display = "block";
+
+            barrinha.style.width = "0%";
+
+            visor.innerHTML =
+                "<p style='color:#00f5d4;text-align:center;'>Carregando módulo...</p>";
+
+            setTimeout(() => {
+                barrinha.style.width = "35%";
+            }, 200);
+
+            setTimeout(() => {
+                barrinha.style.width = "70%";
+            }, 500);
+
+            setTimeout(() => {
+
+                barrinha.style.width = "100%";
+
+            }, 800);
+
+            // REDIRECIONAMENTO
+            setTimeout(() => {
+
+                if (idProjeto === "capacitores") {
+
+                    window.location.href =
+                        "capacitor/index.html"
+                }
+
+                if (idProjeto === "resistores") {
+
+                    window.location.href =
+                        "Resistor/index.html";
+                }
+
+            }, 1000);
+        }
+
+    </script>
+
+</body>
+
+</html>

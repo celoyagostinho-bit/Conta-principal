@@ -1,0 +1,770 @@
+<!DOCTYPE html>
+<html lang="pt-pt">
+
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resistor</title>
+    <link href="ImagemResistor/Icone1.jpg" rel="icon">
+    <link rel="stylesheet" href="offline.Css">
+    <style>
+        /* --- ESTILIZAÇÃO COMPATÍVEL COM TODOS OS TAMANHOS DE TELA --- */
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+
+        body {
+            background-color: #0b0f19;
+            color: #f8f9fa;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            font-size: 16px;
+            line-height: 1.6;
+            padding: 0 15px;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px 0;
+        }
+
+/* --- NOVA ESTILIZAÇÃO DO HEADER HORIZONTAL --- */
+header {
+    background-color: #111827;
+    border-bottom: 2px solid #0a9396;
+    padding: 15px 20px;
+    margin-bottom: 30px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.nav-horizontal {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.nav-brand span {
+    font-family: Arial, sans-serif;
+    font-size: 1.3rem;
+    font-weight: bold;
+    color: #e9d8a6;
+    letter-spacing: 1px;
+}
+
+.nav-menu {
+    display: flex;
+    list-style: none;
+    gap: 20px;
+}
+
+.nav-menu a {
+    color: #00f5d4;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.95rem;
+    font-family: Arial, sans-serif;
+    padding: 6px 12px;
+    border-radius: 4px;
+    border: none; /* Remove a linha tracejada antiga */
+    transition: all 0.2s ease-in-out;
+}
+
+.nav-menu a:hover {
+    color: #0b0f19;
+    background-color: #00f5d4;
+    box-shadow: 0 0 8px rgba(0, 245, 212, 0.4);
+}
+ .IG img {
+            height: 70px;
+            width: 70px;
+            border: 3px solid #0a9396;
+            border-radius: 50%;
+            object-fit: cover;
+            box-shadow: 0 0 15px rgba(10, 147, 150, 0.5);
+        }
+
+/* Ajuste Responsivo para telas pequenas */
+@media (max-width: 480px) {
+    .nav-horizontal {
+        flex-direction: column;
+        gap: 10px;
+    }
+    .nav-menu {
+        gap: 10px;
+    }
+    .nav-menu a {
+        font-size: 0.85rem;
+        padding: 4px 8px;
+    }
+}
+
+
+        /* --- TIPOGRAFIA --- */
+        h1 {
+            font-family: 'Times New Roman', Times, serif;
+            font-size: 2.8rem;
+            color: #e9d8a6;
+            margin-bottom: 20px;
+            border-bottom: 3px solid #0a9396;
+            padding-bottom: 5px;
+        }
+
+        h2, h3 {
+            font-family: Arial, sans-serif;
+            font-size: 1.4rem;
+            color: #94d2bd;
+            margin-top: 35px;
+            margin-bottom: 15px;
+        }
+
+        p {
+            font-size: 1.05rem;
+            font-family: 'Georgia', serif;
+            color: #e5e7eb;
+            text-align: justify;
+            margin-bottom: 15px;
+        }
+
+        strong { color: #00f5d4; }
+
+        /* --- ILUSTRAÇÕES E IMAGENS --- */
+        figure {
+            text-align: center;
+            margin: 25px auto;
+            background-color: #111827;
+            padding: 15px;
+            border-radius: 10px;
+            border: 1px solid #1f2937;
+            max-width: 100%;
+        }
+
+        figure img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 6px;
+            border: 1px solid #374151;
+        }
+
+        /* --- CALCULADORA DO PROJETO --- */
+        fieldset {
+            border: 2px solid #00f5d4;
+            border-radius: 12px;
+            padding: 25px;
+            max-width: 500px;
+            margin: 40px auto;
+            background-color: #111827;
+            box-shadow: 0 8px 20px rgba(0, 245, 212, 0.1);
+        }
+
+        legend {
+            font-weight: bold;
+            color: #00f5d4;
+            padding: 0 10px;
+            font-size: 1.2rem;
+            text-align: center;
+        }
+
+        label {
+            display: block;
+            margin-top: 15px;
+            font-size: 0.9rem;
+            color: #9ca3af;
+            font-weight: bold;
+        }
+
+        input, select, button {
+            width: 100%;
+            padding: 12px;
+            margin-top: 6px;
+            background-color: #0b0f19;
+            border: 1px solid #374151;
+            border-radius: 6px;
+            color: white;
+            font-size: 1rem;
+            transition: all 0.3s;
+        }
+
+        input:focus, select:focus {
+            outline: none;
+            border-color: #00f5d4;
+            box-shadow: 0 0 8px rgba(0, 245, 212, 0.2);
+        }
+
+        button {
+            background-color: #00f5d4;
+            color: #0b0f19;
+            font-weight: bold;
+            border: none;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+
+        button:hover {
+            background-color: #94d2bd;
+            box-shadow: 0 0 12px rgba(148, 210, 189, 0.4);
+        }
+
+        h5#resultado {
+            margin-top: 20px;
+            font-size: 1.2rem;
+            color: #e9d8a6;
+            text-align: center;
+        }
+
+        #detalhe {
+            text-align: center;
+            font-family: monospace;
+            color: #94d2bd;
+            font-size: 1.1rem;
+            margin-top: 5px;
+        }
+
+        /* --- SESSÕES DE ENCERRAMENTO --- */
+        .agradecer {
+            padding: 50px 0;
+            font-size: 1.8rem;
+            text-align: center;
+            font-style: italic;
+            color: #e9d8a6;
+        }
+
+        .fecho {
+            text-align: center;
+            padding: 15px;
+            color: white;
+            background-color: #1d3557;
+            border: 1px solid #0a9396;
+            border-radius: 8px;
+            font-style: italic;
+            font-size: 1.1rem;
+        }
+
+        /* --- RODAPÉ --- */
+        footer {
+            background-color: #00252e;
+            color: white;
+            padding: 30px 15px;
+            text-align: center;
+            margin-top: 40px;
+            border-radius: 12px 12px 0 0;
+            border-top: 1px solid #0a9396;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            flex-wrap: wrap;
+            margin-bottom: 20px;
+        }
+
+        .footer-link {
+            text-decoration: none;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            color: #9ca3af;
+            font-size: 0.75rem;
+            transition: color 0.2s;
+        }
+
+        .footer-link:hover { color: #00f5d4; }
+
+        .footer-img {
+            width: 40px;
+            height: 40px;
+            border: 2px solid #374151;
+            border-radius: 50%;
+            margin-bottom: 6px;
+            transition: transform 0.2s;
+        }
+
+        .footer-link:hover .footer-img {
+            transform: scale(1.1);
+            border-color: #00f5d4;
+        }
+
+        .footer-copyright {
+            font-size: 0.85rem;
+            color: #4b5563;
+        }
+
+        /* --- MEDIA QUERIES --- */
+        @media (max-width: 600px) {
+            h1 { font-size: 2.2rem; }
+            h2, h3 { font-size: 1.2rem; }
+            p { font-size: 0.95rem; }
+            fieldset { padding: 15px; }
+        }
+        
+    </style>
+
+</head>
+
+<body>
+    
+
+    
+  <header>
+    <nav class="nav-horizontal">
+        <div class="nav-brand">
+          <lu class="nav-menu"> <li><a class="IG" href="../index.html"><img src="ImagemResistor/IMGcapa1.jpg" alt="Foto"></a></li>
+            <span>Eloy Agostinho Come</span></lu>
+        </div>
+        <ul class="nav-menu">
+           
+            <li><a href="#calculadora">Calculadora</a></li>
+            <li><a href="#foot">Contactos</a></li>
+          
+        </ul>
+    </nav>
+</header>
+    <h1> Resistor
+    </h1>
+    <h3>O conceito de resistência elétrica</h3>
+    <p>
+        A resistência elétrica é a <strong>capacidade de um corpo de se opor a passagem dos
+            elétrons</strong>, ou seja, quanto maior for a resistência do material, maior vai ser a dificuldade
+        dos
+        elétrons em fluir por este condutor (<strong>resistividade</strong> elétrica é a resistência específica
+        de cada
+        material, fique atento para não confundir).
+    </p>
+    <p>
+        A unidade de medida da Resistência elétrica é <strong>Ohm [Ω]</strong>, em
+        homenagem ao grande físico alemão George Simon Ohm. Pela lei de Ohm a formula da Resistência é:
+        <strong><i>R:V/I</i></strong>
+        (tensão elétrica ÷ corrente elétrica)</p1>
+    <figure><img src="ImagemResistor/Lei de ohm .jpeg" alt="Lei de ohm"></figure>
+    <h3>Qual a função dos resistores na eletrônica?</h3>
+    <p>
+        Resistores são, nada mais nada menos, do que <strong>resistências elétricas.</strong>
+        Resistor é um componente passivo quem serve para dificultar a passagem da corrente elétrica, <strong>têm como
+            função principal se opor ao fluxo
+            ordenado dos elétrons em um condutor</strong>, ou seja, ele limita a passagem de
+        eletricidade oferecendo uma resistência ao fluxo da corrente elétrica. Essa
+        oposição resulta em um dos efeitos mais importantes da eletricidade, que
+        transforma a energia elétrica em energia térmica, denominado de <strong>Efeito Joule.</strong>
+    </p>
+    <p>
+        <h3>Como são construídos os resistores?</h3>
+    </p>
+    <p>
+        A composição física dos resistores precisa atender algumas condições de
+        trabalho das quais são expostos, como por exemplo: trabalhar em <strong>altas
+            temperaturas</strong> e resistir a esse calor <strong>sem alterar sua estrutura
+            físico-química</strong>, ou
+        até mesmo resistência mecânica e robustez. Um dos resistores mais comuns, e que
+        por sinal é o modelo que mais vamos trabalhar no curso, tem o seguinte modelo de
+        construção:
+    </p>
+    <figure><img src="ImagemResistor/Composição interna de um resistor fixo.jpeg" alt="Composição interna de um resistor fixo">
+    </figure>
+    <h3>Como classificamos os tipos de resistores?</h3>
+    <p>
+        Os resistores podem ser classificados de várias maneiras, para facilitar na
+        prática nesse curso vamos separá-los em três grandes grupos, sendo eles:
+    </p>
+    <p>
+        → <strong>Resistores fixos:</strong> como o próprio nome já diz, eles possuem um <strong>valor de
+            resistência fixo</strong> e são encontrados em grande
+        quantidade nos mais diversos circuitos eletrônicos e
+        eletroeletrônicos em nosso dia-a-dia. Possuem baixo
+        custo e são facilmente identificados, através de um
+        <strong>código de cores</strong> que veremos adiante nesse módulo.
+    </p>
+    <figure><img src="ImagemResistor/resistor fxo.jpeg" alt="Resistencia fixa"></figure>
+    <p>
+        → Resistores variáveis: esse tipo de resistor possui uma resistência variável,
+        essa variação é dada através da <strong>interação humana.</strong> Eles podem ser ligados de duas formas
+        diferentes em um circuito, como <strong>potenciômetro</strong> (regula a tensão) e como
+        <strong>reostato</strong> (regula a corrente). São componentes importantes para variar luminosidade,
+        temperatura
+        etc.
+        velocidade, luminosidade, temperatura etc.
+    </p>
+    <figure><img src="ImagemResistor/Resistor variavel, ponteciometro, reostato.jpeg" alt="Resistor variavel, ponteciometro, reostato">
+    </figure>
+    <p>
+        <strong>→ Resistores Ajustáveis:</strong> a resistência varia de acordo com os ,<strong>ajustes feitos
+            pelo autor do projeto,</strong> geralmente utilizando do auxílio de ferramentas. Esse
+        modelo de resistor é usado para calibrar, ajustar e determinar um valor de resistência que fará com que
+        circuitos eletrônicos
+        funcionem conforme o esperado, não necessitando de
+        mudança constante. Um exemplo clássico de resistor ajustável é o <strong>trimpot</strong>.
+    </p>
+    <figure><img src="ImagemResistor/Resistor ajustavel, trimpop.jpeg" alt="Resistor ajustavel, trimpop"></figure>
+    <p>
+        Na placa eletrônica abaixo, que tem como aplicação o controle automatizado
+        de portões, é possível verificar que existem inúmeros trimpots para ajustes no
+        funcionamento do portão, na PCB eles são chamados de <strong>“PAUSA”, “TORQUE” e
+            “RAMPA”.</strong> Vale a pena ressaltar que, uma vez ajustados estes trimpots, dificilmente
+    </p>
+    <figure> ,<img src="ImagemResistor/Placa portão elétrico.jpeg" alt="Placa portão elétrico"></figure>
+    <p>
+        <h3>Conhecendo a simbologia dos resistores</h3>
+    </p>
+    <p>
+        Os resistores <strong>possuem duas simbologias</strong> oficiais, que facilmente são
+        encontradas em diagramas e circuitos eletrônicos. Uma regida pela norma <span
+            style="font-style: italic;"><strong>IEEE</strong></span> e
+        a outra pela <span style="font-style:italic;"><strong>IEC</strong></span>, como mostra a figura abaixo:
+    </p>
+    <figure><img src="ImagemResistor/Simbologias normalizadas dos resistores.jpeg" alt="Simbologias normalizadas dos resistores">
+    </figure>
+    <p>
+        Neste caso, agora que você conhece as duas simbologias normalizadas, uma
+        com origem europeia (IEC) e outra com padrões americanos (IEEE), cabe a você
+        escolher um padrão e desenhar seus circuitos eletrônicos, mas vale ressaltar que
+        <strong>não se deve misturar os padrões</strong> em um mesmo circuito.
+    </p>
+    <h3>O código de cores dos resistores </h3>
+    <p>
+        Para representar os diferentes valores de resistência oferecidos
+        comercialmente, os <strong>resistores eletrônicos do tipo PTH</strong> (terminal inserido no furo),
+        seguem um <strong>código de cores</strong> para identificação. Esse código de cores contempla
+        todos os valores disponíveis para os <strong>resistores eletrônicos de 4 e de 5 faixas</strong>, que
+        são os mais utilizados. Confira o procedimento de identificação através do código
+        de cores:
+    </p>
+    <h3>Tabela do código de cores dos resistores de 4 faixas </h3>
+    <figure><img src="ImagemResistor/Tabela de codigo de cores  para resistor.jpeg" alt="Tabela de codigo de cores  para resistor">
+    </figure>
+    <p>
+        Tomando o resistor acima como exemplo podemos dizer que sua resistência
+        é definida da seguinte maneira:
+    </p>
+    <figure><img src="ImagemResistor/calculo de resistencia .jpeg" alt="calculo de resistencia"></figure>
+    <p>
+        Em seguida aplica-se o fator de multiplicação:
+        Marrom: 10x, logo, se obtém o valor da resistência por: 𝟑𝟑∙𝟏𝟎=𝟑𝟑𝟎 Ω
+    </p>
+    <h3>Tabela do código de cores dos resistores de 5 faixas </h3>
+    <p>
+        Para ler os valores ôhmicos dos resistores de 5 faixas, basta seguir o modo
+        anterior e acrescentar a terceira faixa nos algarismos somados e depois multiplicar
+        pelo fator de multiplicação normalmente.
+    </p>
+    <figure><img src="ImagemResistor/Tabela de cores para 5 faixas.jpeg" alt="Tabela de cores para 5 faixas"></figure>
+    <p>
+        Padronização “E séries”
+    </p>
+    <p>
+        Por motivos de padronização internacional, os resistores <strong>não são
+            encontrados em valores aleatórios,</strong> eles são classificados segundo um sistema
+        estabelecido pela norma <strong>IEC 60063</strong>:1963. Cada série está relacionada com a
+        <strong>tolerância</strong> de variação na resistência em ohms, que é dada em %. Um número de
+        “Décadas” é definido para cada série, isto é, as <strong>iniciais do resistor</strong> em específico.
+        Observe a tabela a seguir:
+    </p>
+    <figure><img src="ImagemResistor/Padronização E séries.jpeg" alt="Padronização E séries"></figure>
+    <h3>Classe E6</h3>
+    <p>
+        Conforme a tabela anterior se pode notar que a série E6 possui apenas <strong>6
+            décadas disponíveis</strong> para <strong>formar os valores dos resistores.</strong> Por exemplo:
+        [10, 15,
+        22, 33, 47, 68], e a tolerância padrão para esta série é de <strong>+-20%</strong> em relação ao valor
+        nominal da resistência. Nesta classe, os resistores possuem 3 faixas, sendo às duas
+        primeiras os algarismos e a terceira o fator multiplicativo, portanto, <strong>não possui a
+            faixa (4ª Faixa) da tolerância.</strong>
+    </p>
+    <h3>Exemplo de resistores que atendem a <strong>classe E6:</strong> </h3>
+    <figure><img src="ImagemResistor/Exemplos de resistores classe E6 .jpeg" alt="Exemplos de resistores classe E6"></figure>
+    <p>
+        O resistor ao lado, de 5K600 Ω, <strong>ão atende</strong> a classe
+        E6, pois a sua década inicial, prefixo 56, não está
+        padronizado neste tipo de resistor.
+    </p>
+    <figure><img src=" ImagemResistor/Resistor inexistente .jpeg" alt=" Resistor inexistente"></figure>
+    <h3>Classe E12</h3>
+    <p>
+        A classe E12 tem como caraterística as tolerâncias dos resistores sempre em
+        um valor de <strong>+- 10%.</strong> Essa tolerância é representada pela cor <strong>prata</strong> após
+        a faixa
+        do
+        fator multiplicativo, logo os resistores a partir desta classe passam a ter <strong>4 faixas.</strong> A
+        classe E12 possui <strong>décadas disponíveis</strong> para formar o valor do resistor.
+    </p>
+    <figure><img src="ImagemResistor/resistor Série E12.jpeg" alt="resistor Série E12"></figure>
+    <p>
+        Veja alguns exemplos de resistores da <strong>classe E12:</strong>
+    </p>
+    <figure><img src="ImagemResistor/Exemplos de resistores classe E12.jpeg" alt="Exemplos de resistores classe E12"></figure>
+    <p>
+        Esses valores podem ser conferidos na <strong>Tabela 1 (código de cores).</strong>
+    </p>
+    <h3>Classe E24</h3>
+    <p>
+        Com a série E24, as tolerâncias dos resistores passam a ter um valor <strong>+- 5%,</strong>
+        que por sua vez é representada pela faixa de cor <strong>dourado.</strong> Os resistores desta
+        classe também possuem <strong>4 faixas.</strong>
+    </p>
+    <p>
+        A classe E24 possui <strong>24 décadas disponíveis</strong> para formar o valor do resistor,
+        a imagem abaixo mostra as opções disponíveis para este tipo de classe de resistor.
+        Esta classe possui 12 décadas a mais que a classe E12, têm-se então décadas como:
+        75, 43, 36, 91 das quais não estavam disponíveis nos sistemas anteriores.
+    </p>
+    <p>
+        Confira a tabela que representa essa classe:
+    </p>
+    <figure><img src="ImagemResistor/Resistencia Série E24.jpeg" alt="Resistencia Série E24"></figure>
+    <p>
+        Veja alguns exemplos de resistores da <strong>classe E24:</strong>
+    </p>
+    <figure><img src="ImagemResistor/Exemplos de resistores classe E24.jpeg" alt="Exemplos de resistores classe E24"></figure>
+    <h3>Classes E48 e E96</h3>
+    <p>
+        Os resistores da <strong>classe E24</strong> são os mais utilizados no mundo da
+        eletroeletrônica, isso devido ao seu baixo custo, inúmeras possibilidades de
+        décadas e também por atender as necessidades da maioria dos circuitos
+        eletrônicos existentes. Mas quando se tem a necessidade de uma precisão refinada
+        e de alta fidelidade em relação ao valor ôhmico do resistor, aparecem as <strong>classes
+            E48,</strong> onde os resistores terão 2% de tolerância, e <strong>E96,</strong> onde os resistores
+        terão 1%
+        de tolerância.
+    </p>
+    <p>
+        Esses resistores são muito usados em circuitos eletrônicos que devem ler
+        sensores de <strong>alta precisão.</strong> Predominante na área de instrumentação e medição de
+        grandezas elétricas, acoplamento de sinais de transdutores, essas classes atendem
+        os critérios de projeto.
+    </p>
+    <p>
+        A cor da faixa da tolerância na classe E48 é <span style="color:brown;">vermelha</span>
+        e na classe E96, a faixa
+        tem cor marrom, ambas estando após a faixa do fator multiplicativo. Os resistores
+        destas classes possuem 5 faixas, às três primeiras sendo os três dígitos inicias do
+        valor ôhmico, a quarta faixa será o fator multiplicativo, e a quinta faixa, marrom (1%)
+        ou vermelha(2%), será a da tolerância.
+    </p>
+    <p>
+        A classe <strong> E48 possui 48 opções</strong> de inicias disponíveis para formar o valor do
+        resistor, e a <strong> E96, por consequência, 96 opções.</strong>
+    </p>
+    <figure><img src="ImagemResistor/Resistor Série E96 e Série E48_LI.jpg" alt="Resistor Série E96 e Série E48"></figure>
+    <p>
+        Esses valores podem ser conferidos na tabela 6 (código de cores) específica
+        para <strong>resistores de 5 faixas.</strong>
+    </p>
+    <h3>Resistores de 3 e 6 faixas? Pode isso? </h3>
+    <p>
+        Além dos famosos resistores de 4 faixas, que são os mais usuais, temos ainda
+        disponível para uso os resistores de 3, 5 faixas e até mesmo os de 6 faixas. Mas qual
+        é a diferença entre eles? Como decifrar seu código de cores?
+    </p>
+    <p>
+        Isso é bem simples pois, de forma análoga, associamos a quantidade de faixas
+        com as informações de projeto ali contidas. Veja o que representa cada faixa
+        existente:
+    </p>
+    <h3>Resistor de 3 faixas:</h3>
+    <p>
+        A faixa “faltante” no modelo de 3 faixas
+        significa que a tolerância é definida como
+        20% +/-. Então agora você já sabe, viu um
+        resistor com apenas 3 faixas, segue o modelo
+        de leitura de resistência igual ao de 4 faixas, no entanto, sabendo que a variação da
+        sua resistência é de 20% para mais ou para menos.
+    </p>
+   <figure> <img
+        src="ImagemResistor/codigo para Resistor de 3 faixas .jpeg" alt="codigo para Resistor de 3 faixas"></figure>
+    <h3>Resistor de 5 faixas:</h3>
+    <p>
+        São os resistores de precisão e podem ser lidos usando a tabela abaixo:
+    </p>
+    <figure><img src="ImagemResistor/Tabela código de cores resistores 5 faixas.jpeg"
+        alt="Tabela código de cores resistores 5 faixas">
+    <h3>Resistores de 6 faixas:</h3>
+    <p>
+        Esse modelo de resistor segue as mesmas especificações dos resistores de 5
+        faixas, mas adicionando a 6ª faixa, que por sua vez representa o coeficiente de
+        temperatura em PPM/°C. Mas afinal, o que é isso? Como entender esse coeficiente
+        e o que ele representa? Vejamos:
+    </p>
+    <h3>→ O que é PPM/°C? </h3>
+    <p>
+        Os resistores têm sua tolerância de resistência, normalmente,
+        classificada em porcentagem [%]. Mas o que pouca gente sabe, é que ainda
+        há outra maneira de classificar essa tolerância, o PPM, partes por milhão. Esta
+        é uma especificação que indica quantas partes um componente pode variar
+        por milhão de unidades, nesse caso o grau celsius [°C].
+    </p>
+    <h3>→ Como ler a tolerância em PPM/°C? </h3>
+    <p>
+        Digamos que temos um resistor de 1MΩ.
+    </p>
+    <p>
+        Um resistor de 1MΩ é um resistor que possui um código de cor marrom
+        preto-verde. Tem um valor nominal de 1.000.000Ω. Agora, digamos que esse
+        resistor tenha uma especificação de partes por milhão de 5000 PPM. Isso
+        significa que, para cada 1.000.000 ohms de resistência que esse resistor
+        possui, a resistência pode variar até 5.000 ohms. Isso significa que esse 1 MΩ
+        pode ter uma resistência de 5000 ohms abaixo ou acima de 1.000.000 ohms, o
+        que significa que sua resistência pode ser tão baixa quanto 995.000Ω ou tão
+        alta quanto 1.005.000Ω, ou em algum lugar intermediário. Simples, não é?
+        Veja a tabela:
+    </p>
+    <figure><img src=" ImagemResistor/Tabela resistores de 6 faixas.jpeg" alt=" Tabela resistores de 6 faixas"></figure>
+    <h3>Exemplificando um resistor de 6 faixas:</h3>
+    <figure><img src="ImagemResistor/Exemplo resistor de 6 faixas.jpeg" alt="Exemplo resistor de 6 faixas"> </figure>
+    <p>
+        <strong>1ª Faixa:</strong> Amarelo = 4
+    </p>
+    <p>
+        <strong>2ª Faixa:</strong> Verde = 5
+    </p>
+    <p>
+        <strong>3ª Faixa:</strong> Cinza = 8
+    </p>
+    <p>
+        <srong>4ª Faixa Multiplicadora:</strong> Prata = x 0,01
+    </p>
+    <p>
+        <strong>Valor obtido:</strong> 4,58 Ω
+    </p>
+    <p>
+        <strong>5ª Faixa Tolerância:</strong> Marrom = ± 1% = 0,0458 Ω
+    </p>
+    <p>
+        Por definição, sabemos que o resistor pode variar de 4,53 Ω a 4,63 Ω de
+        acordo com a tolerância.
+    </p>
+    <p>
+        <strong>6ª Faixa Coeficiente de temperatura:</strong> Vermelho = 50 PPM/°C
+    </p>
+ 
+
+
+
+
+    <fieldset id="calculadora">
+        <legend>Calculadora lei de Ohm</legend>
+        <! <h6>
+
+            <label>Escolhe o que queres calcular:</label>
+            <select id="calcular" onchange="atualizarLabels()">
+                <option value="V">Tensão (V)</option>
+                <option value="I">Corrente (I)</option>
+                <option value="R">Resistência (R)</option>
+                <option value="Pi">Potência com corrente(P)</option>
+                <option value="Pt">Potência com tensão(P)</option>
+            </select>
+            <label id="label1">Corrente (I):</label>
+            <input type="number" id="valor1" placeholder="Ex: 2">
+            <label id="label2">Resistência (R):</label>
+            <input type="number" id="valor2" placeholder="Ex: 5">
+            <button onclick="calcular()">Calcular</button>
+            <h5 id="resultado">Resultado:</h5>
+            <p id="detalhe"></p>
+             </fieldset>
+             
+            <p class="agradecer">
+        Muito Obrigado
+        </p>
+
+
+        <p class="fecho">
+           Inovação, Tecnologia  e  Eletrônica
+        </p>
+  <footer id="foot">
+            <div class="footer-links">
+                <a href="https://wa.me/849231525" class="footer-link" target="_blank">
+                    <img class="footer-img" src="ImagemResistor/WhatsApp.jpg" alt="WhatsApp">
+                    
+                </a>
+                 <a href="https://www.facebook.com/profile.php?id=61586937477414" target="_blank">
+                    <img class="footer-img" src="ImagemResistor/Facebook.jpg" alt="Facebook">
+                    
+                </a>
+                <a href="sms:+258849231525?body=Ola%20Eloy%20Come,%20puxei%20o%20teu%20site.%20Podemos%20conversar%20?" class="footer-link">
+                    <img class="footer-img" src="ImagemResistor/chat.jpg" alt="Chat">
+                   
+                </a>
+                <a href="tel:+258849231525" class="footer-link">
+                    <img class="footer-img" src="ImagemResistor/chamada.jpg" alt="Telefone">
+                   
+                </a>
+                <a href="mailto:celoyagostinho@gmail.com" class="footer-link">
+                    <img class="footer-img" src="ImagemResistor/gmail.jpg" alt="Gmail">
+                  
+                </a>
+            </div>
+            <p class="footer-copyright">
+                &copy; 2026 Todos os direitos reservados.
+            </p>
+        </footer>
+
+
+            <script>
+
+                function atualizarLabels() {
+                    let tipo = document.getElementById('calcular').value;
+                    let l1 = document.getElementById('label1');
+                    let l2 = document.getElementById('label2');
+                    if (tipo === 'V') {
+                        l1.innerText = 'Corrente (I):';
+                        l2.innerText = 'Resistência (R):';
+                    } else if (tipo === 'I') {
+                        l1.innerText = 'Tensão (V):';
+                        l2.innerText = 'Resistência (R):';
+                    } else if (tipo === 'R') {
+                        l1.innerText = 'Tensão (V):';
+                        l2.innerText = 'Corrente (I):';
+                    } else if (tipo === 'Pi') {
+                        l1.innerText = 'Corrente(I)'
+                        l2.innerText = 'Resistência(R)'
+                    } else if (tipo === 'Pt') {
+                        l1.innerText = 'Tensão (V):';
+                        l2.innerText = 'Resistência(R):'
+                    }
+                }
+                function calcular() {
+                    let tipo = document.getElementById('calcular').value;
+                    let v1 = parseFloat(document.getElementById('valor1').value);
+                    let v2 = parseFloat(document.getElementById('valor2').value);
+                    let res = document.getElementById('resultado');
+                    let detalhe = document.getElementById('detalhe');
+                    if (isNaN(v1) || isNaN(v2)) {
+                        res.innerText = 'Preenche os dois valores corretamente.';
+                        detalhe.innerText = '';
+                        return;
+                    }
+                    let resultado = 0;
+                    let formula = '';
+                    if (tipo === 'V') {
+                        resultado = v1 * v2;
+                        formula = `V = I × R = `;
+                    } else if (tipo === 'I') {
+                        resultado = v1 / v2;
+                        formula = `I = V ÷ R = `;
+                    } else if (tipo === 'R') {
+                        resultado = v1 / v2;
+                        formula = 'R = V ÷ I = ';
+                    } else if (tipo === 'Pi') {
+                        resultado = v1 ** 2 * v2;
+                        formula = 'P = R × I^2 = ';
+                    } else if (tipo === 'Pt') {
+                        resultado = v1 ** 2 / v2;
+                        formula = 'P= V^2 ÷ R =';
+                    }
+
+                    let unidade = tipo === 'V' ? 'v': tipo === 'I' ? 'A': tipo === 'R' ? 'Ω': tipo === 'Pi' ? 'W': tipo === 'Pt' ? 'W':
+                    res.innerText = 'Resultado = resultado.toFixed(2) {unidade}';
+                    detalhe.innerText = formula + "" + resultado + "" + unidade;
+                }
+
+                atualizarLabels(); // inicializa os rótulos corretamente
+
+            </script>
+        
+
+       
+    </body>
+
+</html>

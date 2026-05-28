@@ -1,0 +1,589 @@
+<!DOCTYPE html>
+<html lang="pt-pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Capacitor</title>
+<link href="ImagensCapacitor/Eloy.jpg" rel="Eloy Agostinho Come">
+    <link rel="stylesheet" href="base.css" media="screen">
+    <link rel="stylesheet" href="mobile.css" media="(max-width: 480px)">
+    <link rel="stylesheet" href="Body.css">
+    
+    <style>
+        /* --- CONFIGURAÇÃO GLOBAL --- */
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+
+        body {
+            background-color: #0b0f19;
+            color: #f8f9fa;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            font-size: 16px;
+            line-height: 1.6;
+            padding: 0 15px;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px 0;
+        }
+
+      header {
+    background-color: #111827;
+    border-bottom: 2px solid #0a9396;
+    padding: 15px 20px;
+    margin-bottom: 30px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.nav-horizontal {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.nav-brand span {
+    font-family: Arial, sans-serif;
+    font-size: 1.3rem;
+    font-weight: bold;
+    color: #e9d8a6;
+    letter-spacing: 1px;
+}
+
+.nav-menu {
+    display: flex;
+    list-style: none;
+    gap: 20px;
+}
+
+.nav-menu a {
+    color: #00f5d4;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.95rem;
+    font-family: Arial, sans-serif;
+    padding: 6px 12px;
+    border-radius: 4px;
+    border: none; /* Remove a linha tracejada antiga */
+    transition: all 0.2s ease-in-out;
+}
+
+.nav-menu a:hover {
+    color: #0b0f19;
+    background-color: #00f5d4;
+    box-shadow: 0 0 8px rgba(0, 245, 212, 0.4);
+}
+.IG img {
+            height: 70px;
+            width: 70px;
+            border: 3px solid #0a9396;
+            border-radius: 50%;
+            object-fit: cover;
+            box-shadow: 0 0 15px rgba(10, 147, 150, 0.5);
+        }
+        /* --- TIPOGRAFIA --- */
+        h1 {
+            font-family: 'Times New Roman', Times, serif;
+            font-size: 2.8rem;
+            color: #e9d8a6;
+            margin-bottom: 20px;
+            border-bottom: 3px solid #0a9396;
+            padding-bottom: 5px;
+        }
+
+        h2, h3, h4 {
+            font-family: Arial, sans-serif;
+            font-size: 1.4rem;
+            color: #94d2bd;
+            margin-top: 35px;
+            margin-bottom: 15px;
+        }
+
+        h5 {
+            font-size: 1.1rem;
+            color: #e9d8a6;
+            margin: 10px 0;
+        }
+
+        p {
+            font-size: 1.05rem;
+            font-family: 'Georgia', serif;
+            color: #e5e7eb;
+            text-align: justify;
+            margin-bottom: 15px;
+        }
+
+        strong { color: #00f5d4; }
+        .destaque-polarizado { color: #ff4d6d; font-weight: bold; }
+
+        .lista-capacitores {
+            background-color: #111827;
+            padding: 15px 20px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            border-left: 4px solid #0a9396;
+            list-style-position: inside;
+        }
+
+        .lista-capacitores li {
+            margin-bottom: 10px;
+            color: #e5e7eb;
+        }
+
+        /* --- BLOCOS DE IMAGEM --- */
+        figure {
+            text-align: center;
+            margin: 25px auto;
+            background-color: #111827;
+            padding: 15px;
+            border-radius: 10px;
+            border: 1px solid #1f2937;
+            max-width: 100%;
+        }
+
+        figure img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 6px;
+            border: 1px solid #374151;
+        }
+
+        /* --- CALCULADORA DE CAPACITÂNCIA --- */
+        fieldset {
+            border: 2px solid #00f5d4;
+            border-radius: 12px;
+            padding: 25px;
+            max-width: 500px;
+            margin: 40px auto;
+            background-color: #111827;
+            box-shadow: 0 8px 20px rgba(0, 245, 212, 0.1);
+        }
+
+        legend {
+            font-weight: bold;
+            color: #00f5d4;
+            padding: 0 10px;
+            font-size: 1.2rem;
+            text-align: center;
+        }
+
+        label {
+            display: block;
+            margin-top: 15px;
+            font-size: 0.9rem;
+            color: #9ca3af;
+            font-weight: bold;
+        }
+
+        input, select, button {
+            width: 100%;
+            padding: 12px;
+            margin-top: 6px;
+            background-color: #0b0f19;
+            border: 1px solid #374151;
+            border-radius: 6px;
+            color: white;
+            font-size: 1rem;
+            transition: all 0.3s;
+        }
+
+        input:focus, select:focus {
+            outline: none;
+            border-color: #00f5d4;
+            box-shadow: 0 0 8px rgba(0, 245, 212, 0.2);
+        }
+
+        .btn-container {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        button {
+            font-weight: bold;
+            border: none;
+            cursor: pointer;
+        }
+
+        button[onclick="calcular()"] {
+            background-color: #00f5d4;
+            color: #0b0f19;
+        }
+
+        button[onclick="Resetar()"] {
+            background-color: #374151;
+            color: white;
+        }
+
+        button:hover {
+            opacity: 0.9;
+            transform: translateY(-1px);
+        }
+
+        h5#resultado {
+            margin-top: 25px;
+            font-size: 1.3rem;
+            color: #e9d8a6;
+            text-align: center;
+            border-top: 1px dashed #374151;
+            padding-top: 15px;
+        }
+
+        /* --- SESSÕES DE ENCERRAMENTO --- */
+        .agradecer {
+            padding: 50px 0;
+            font-size: 1.8rem;
+            text-align: center;
+            font-style: italic;
+            color: #e9d8a6;
+        }
+
+        .fecho {
+            text-align: center;
+            padding: 15px;
+            color: white;
+            background-color: #1d3557;
+            border: 1px solid #0a9396;
+            border-radius: 8px;
+            font-style: italic;
+            font-size: 1.1rem;
+        }
+
+        /* --- RODAPÉ --- */
+        footer {
+            background-color: #00252e;
+            color: white;
+            padding: 30px 15px;
+            text-align: center;
+            margin-top: 40px;
+            border-radius: 12px 12px 0 0;
+            border-top: 1px solid #0a9396;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            flex-wrap: wrap;
+            margin-bottom: 20px;
+        }
+
+        .footer-link {
+            text-decoration: none;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            color: #9ca3af;
+            font-size: 0.75rem;
+            transition: color 0.2s;
+        }
+
+        .footer-link:hover { color: #00f5d4; }
+
+        .footer-img {
+            width: 40px;
+            height: 40px;
+            border: 2px solid #374151;
+            border-radius: 50%;
+            margin-bottom: 6px;
+            transition: transform 0.2s;
+        }
+
+        .footer-link:hover .footer-img {
+            transform: scale(1.1);
+            border-color: #00f5d4;
+        }
+
+        .footer-copyright {
+            font-size: 0.85rem;
+            color: #4b5563;
+        }
+
+        /* RESPONSIVIDADE */
+        @media (max-width: 600px) {
+            .nav-horizontal { flex-direction: column; gap: 10px; }
+            .nav-menu { gap: 10px; }
+            h1 { font-size: 2.2rem; }
+            h2, h3 { font-size: 1.2rem; }
+            p { font-size: 0.95rem; }
+        }
+         
+    </style>
+</head>
+
+<body>
+ <header>
+    <nav class="nav-horizontal">
+        <div class="nav-brand">
+          <lu class="nav-menu"> <li><a class="IG" href="../"><img src="../Icones/Eloy Agostinho Come.jpg" alt="Eloy Agostinho Come"></a></li>
+            <span>Eloy Agostinho Come</span></lu>
+        </div>
+        <ul class="nav-menu">
+           
+            <li><a href="#calculadora">Calculadora</a></li>
+            <li><a href="#foot">Contactos</a></li>
+          
+        </ul>
+    </nav>
+</header>
+
+    <div class="container">
+        <h1>Capacitor</h1>
+        <p>
+            O capacitor é um componente que serve para <strong>armazenar cargas elétricas</strong> em forma de um campo elétrico, desacoplar ruídos nas entradas e saídas de um determinado circuito e muito mais.
+        </p>
+
+        <h3>Simbologia, classificação e unidade de medida</h3>
+        <p>
+            As simbologias dos capacitores já dizem muito sobre o modelo do componente que está sendo empregado. São classificados em dois grandes grupos: os <span class="destaque-polarizado">polarizados</span> e os <span class="destaque-polarizado">não polarizados.</span>
+        </p>
+        <p>
+            <strong>Exemplos de capacitores não polarizados:</strong> capacitores cerâmicos ou de poliéster.
+        </p>
+        <p>
+            <strong>Exemplos de capacitores polarizados:</strong> os <strong>capacitores eletrolíticos</strong>. Estes armazenam grandes quantidades de cargas elétricas e, por essa característica, são aplicados em filtros de fontes de alimentação e sistemas de amplificação de áudio.
+        </p>
+
+        <h3>Símbolo de capacitores</h3>
+        <figure>
+            <img src="ImagensCapacitor/Simbologia de capacitores.jpeg" alt="Simbologia técnica de capacitores no diagrama elétrico">
+        </figure>
+
+        <h3>Unidade de medida no SI de um capacitor</h3>
+        <p>
+            A unidade de medida dos capacitores é dada em <strong>Farad [F]</strong>, em homenagem a Michael Faraday. Geralmente, os capacitores são aplicados em submúltiplos da unidade base (<em>Ex: microfarad [µF], nanofarad [nF] e picofarad [pF]</em>).
+        </p>
+
+        <h3>Capacitância</h3>
+        <p>
+            Capacitância é a <strong>capacidade de armazenamento de carga de um capacitor.</strong> Uma relação de proporcionalidade direta entre a carga acumulada e a diferença de potencial aplicada em seus terminais.
+        </p>
+        <figure>
+            <img src="ImagensCapacitor/formula para calcular capacitancia.jpeg" alt="Fórmula matemática da capacitância: C = Q / V">
+        </figure>
+
+        <h3>Construção física e Funcionamento do capacitor eletrolítico</h3>
+        <p>
+            Um capacitor eletrolítico, basicamente, é formado por <strong>duas placas</strong> de um determinado material condutor, chamadas de <em>armaduras</em>. As armaduras são <strong>isoladas</strong> eletricamente entre si, separadas por um material químico isolante conhecido como <strong>dielétrico.</strong>
+        </p>
+        <figure>
+            <img src="ImagensCapacitor/Capacitor eletrolitico.jpeg" alt="Estrutura interna em camadas de um capacitor eletrolítico">
+        </figure>
+        <p>
+            O material que compõe as armaduras é eletricamente neutro em seu estado natural. Quando conectamos o capacitor a uma fonte de Corrente Contínua (C.C.), surge então uma diferença de potencial elétrico entre as armaduras. Devido à atração e repulsão, os elétrons organizam-se em uma das armaduras (polo negativo) e os prótons na outra (polo positivo).
+        </p>
+
+        <h3>Capacitor cerâmico</h3>
+        <h5>Aplicação de capacitores cerâmicos</h5>
+        <p>
+            O capacitor cerâmico é amplamente aplicado em sistemas desacopladores de ruído de alta frequência. Esse modelo possui uma capacitância tipicamente baixa e velocidade de resposta rápida.
+        </p>
+        <figure>
+            <img src="ImagensCapacitor/Capacitor ceramico.jpeg" alt="Exemplo físico de capacitores cerâmicos de disco">
+        </figure>
+
+        <h4>Leitura dos capacitores cerâmicos de disco</h4>
+        <p>
+            A leitura dos capacitores cerâmicos de disco é de extrema importância na manutenção e substituição de componentes em placas de circuito impresso (PCB), permitindo identificar o valor correto mesmo sem o esquema elétrico original em mãos.
+        </p>
+        <figure>
+            <img src="ImagensCapacitor/Identificação capacitor cerâmico.jpeg" alt="Exemplo prático de leitura de código em capacitor de disco">
+        </figure>
+        <figure>
+            <img src="ImagensCapacitor/Código de identificação capacitores cerâmicos.jpeg" alt="Tabela de referência para códigos de capacitores cerâmicos">
+        </figure>
+
+        <h3>Leitura dos capacitores de poliéster</h3>
+        <p>
+            Os valores de referência são indicados com um número de três dígitos seguido por uma letra de tolerância. Os dois primeiros dígitos indicam a base numérica inicial, enquanto o terceiro dígito representa o multiplicador (número de zeros que devem ser adicionados). O resultado obtido por este código padrão é sempre calculado em <strong>picofarad [pF].</strong>
+        </p>
+
+        <h4>Exemplo de codificações estruturadas:</h4>
+        <figure>
+            <img src="ImagensCapacitor/Capacitores cerâmicos .jpeg " alt="Conjunto de capacitores com diferentes marcações de código">
+        </figure>
+        
+        <ul class="lista-capacitores">
+            <li><strong>Capacitor 1:</strong> Código 104 ➔ Indica apenas a sua capacitância base ($10 \times 10^4\text{ pF} = 100\text{ nF}$).</li>
+            <li><strong>Capacitor 2:</strong> Código 104 a 400V ➔ Indica o valor nominal de capacitância e a sua tensão máxima de isolamento de $400\text{V}$.</li>
+            <li><strong>Capacitor 3:</strong> Código 104J 250V ➔ Indica a capacitância, letra J para a classe de tolerância ($\pm 5\%$) e $250\text{V}$ de trabalho estável.</li>
+            <li><strong>Capacitor 4:</strong> Código 2A 104J ➔ O prefixo 2A codifica a tensão máxima pelo padrão industrial EIA, seguido de valor e tolerância.</li>
+        </ul>
+
+        <h3>Carga e descarga de um capacitor</h3>
+        <p>
+            Ao conectar o componente a uma fonte, cria-se uma determinada <strong>tensão entre as armaduras.</strong> Quando o fluxo elétrico cessa, dizemos que o <strong>capacitor está totalmente carregado</strong>, pois ele retém essa diferença de potencial mesmo se for desconectado fisicamente da fonte de energia do circuito.
+        </p>
+        <figure>
+            <img src="ImagensCapacitor/Cargas elétricas no capacitor.jpeg" alt="Diagrama de retenção de cargas elétricas no dielétrico do capacitor">
+        </figure>
+        <p>
+            Quando os terminais deste capacitor carregado são acoplados a uma carga (como um resistor ou LED), ele passa a atuar temporariamente como uma fonte de energia, gerando uma corrente de descarga até que as armaduras restabeleçam o equilíbrio potencial neutro.
+        </p>
+        <figure>
+            <img src="ImagensCapacitor/Capacitor carregando.jpeg" alt="Gráfico de curva de tempo de carga e descarga de um capacitor">
+        </figure>
+
+        <h3>Associação de capacitores</h3>
+        <h4>Associação em série</h4>
+        <p>
+            Na associação em série conectados os capacitores seguidos no mesmo ramo linear. A carga armazenada ($Q$) em todas as armaduras é rigorosamente igual, dividindo-se apenas a queda de tensão do circuito. A fórmula do cálculo equivalente comporta-se de forma inversa à dos resistores:
+        </p>
+        <figure>
+            <img src="ImagensCapacitor/associação de capacitores em serie.jpeg" alt="Fórmula do inverso da soma dos inversos para capacitores em série">
+        </figure>
+        <p>
+            Para simplificação rápida de dois componentes por etapa, aplica-se o produto pela soma:
+        </p>
+        <figure>
+            <img src="ImagensCapacitor/Associação de capacitores em serie 2 a 2.jpeg" alt="Fórmula simplificada produto pela soma de dois capacitores">
+        </figure>
+
+        <h4>Associação de capacitores em paralelo</h4>
+        <p>
+            Quando associados em paralelo, a tensão de trabalho é exatamente igual para todos os ramos, enquanto a capacidade total de armazenamento de carga do bloco é somada diretamente.
+        </p>
+        <figure>
+            <img src="ImagensCapacitor/Formula da associação de associação de capacitrores em paralelo.jpeg" alt="Fórmula da soma direta de capacitores em paralelo: Ceq = C1 + C2 + ...">
+        </figure>
+
+        <h4>Associação mista de capacitores</h4>
+        <p>
+            Consiste em analisar circuitos complexos dividindo os blocos que estão em paralelo e os ramos em série, aplicando as regras matemáticas corretas em etapas sucessivas até obter o valor final da malha analisada.
+        </p>
+
+        <!-- --- SEÇÃO CALCULADORA --- -->
+        <fieldset id="calculadora">
+            <legend>Calculadora de Código Cerâmico</legend>
+            
+            <label for="valor1">Primeiro dígito:</label>
+            <input type="number" id="valor1" min="0" max="9" placeholder="Ex: 1">
+            
+            <label for="valor2">Segundo dígito:</label>
+            <input type="number" id="valor2" min="0" max="9" placeholder="Ex: 0">
+            
+            <label for="valor3">Terceiro dígito (Multiplicador):</label>
+            <input type="number" id="valor3" min="0" max="9" placeholder="Ex: 4">
+            
+            <label for="tol">Escolha a letra da tolerância:</label>
+            <select id="tol">
+                <option value="S">Sem letra indicada</option>
+                <option value="C">C (±0.25 pF)</option>
+                <option value="D">D (±0.5 pF)</option>
+                <option value="E">E (±1%)</option>
+                <option value="G">G (±2%)</option>
+                <option value="J">J (±5%)</option>
+                <option value="K">K (±10%)</option>
+                <option value="L">L (±15%)</option>
+                <option value="M">M (±20%)</option>
+                <option value="N">N (±30%)</option>
+                <option value="Z">Z (+80%, -20%)</option>
+            </select>
+            
+            <div class="btn-container">
+                <button onclick="calcular()">Calcular</button>
+                <button onclick="Resetar()">Limpar</button>
+            </div>
+            
+            <h5 id="resultado"></h5>
+        </fieldset>
+
+        
+    </div>
+
+        
+        <p class="agradecer">Fim</p>
+        <p class="fecho">Aprende, cria, brilha!</p>
+
+        <!-- --- RODAPÉ --- -->
+        <footer id="foot">
+            <div class="footer-links">
+                <a href="https://wa.me/849231525" class="footer-link" target="_blank">
+                    <img class="footer-img" src="../Icones/whatsApp.jpg" alt="WhatsApp">
+                    
+                </a>
+                 <a href="https://www.facebook.com/profile.php?id=61586937477414" target="_blank">
+                    <img class="footer-img" src="../Icones/facebook.jpg" alt="Facebook">
+                    
+                </a>
+                <a href="sms:+258849231525?body=Ola%20Eloy%20Come,%20puxei%20o%20teu%20site.%20Podemos%20conversar%20?" class="footer-link">
+                    <img class="footer-img" src="../Icones/chat.jpg" alt="Chat">
+                   
+                </a>
+                <a href="tel:+258849231525" class="footer-link">
+                    <img class="footer-img" src="../Icones/chamada.jpg" alt="Telefone">
+                   
+                </a>
+                <a href="mailto:celoyagostinho@gmail.com" class="footer-link">
+                    <img class="footer-img" src="../Icones/gmail.jpg" alt="Gmail">
+                  
+                </a>
+            </div>
+            <p class="footer-copyright">
+                &copy; 2026 Todos os direitos reservados.
+            </p>
+        </footer>
+
+    
+
+    <!-- --- PROCESSAMENTO JAVASCRIPT CORRIGIDO --- -->
+    <script>
+        function calcular() {
+            let v1 = document.getElementById('valor1').value;
+            let v2 = document.getElementById('valor2').value;
+            let v3 = document.getElementById('valor3').value;
+            let tol = document.getElementById('tol').value;
+            let resCampo = document.getElementById('resultado');
+
+            if (v1 === "" || v2 === "" || v3 === "") {
+                resCampo.style.color = "#ff4d6d";
+                resCampo.innerText = 'Por favor, introduza os três dígitos do código.';
+                return;
+            }
+
+            let digito1 = parseInt(v1);
+            let digito2 = parseInt(v2);
+            let multiplicador = parseInt(v3);
+
+            let letra = {
+                'S': '', 'C': ' | ±0,25pF', 'D': ' | ±0,5pF', 'E': ' | ±1%', 
+                'G': ' | ±2%', 'J': ' | ±5%', 'K': ' | ±10%', 'L': ' | ±15%', 
+                'M': ' | ±20%', 'N': ' | ±30%', 'Z': ' | +80% / -20%'
+            };
+
+            // Cálculo matemático da capacitância base em picofarads
+            let pf = (digito1 * 10 + digito2) * Math.pow(10, multiplicador);
+            let exibicao = "";
+
+            if (pf >= 1000000) {
+                let uf = pf / 1000000;
+                exibicao = `${uf.toFixed(3).replace(/\.?0+$/, "")} µF`;
+            } else if (pf >= 1000) {
+                let nf = pf / 1000;
+                exibicao = `${nf.toFixed(3).replace(/\.?0+$/, "")} nF`;
+            } else {
+                exibicao = `${pf} pF`;
+            }
+
+            resCampo.style.color = "#e9d8a6";
+            resCampo.innerText = `Capacitância Nominal = ${exibicao}${letra[tol]}`;
+        }
+
+        function Resetar() {
+            document.getElementById('valor1').value = '';
+            document.getElementById('valor2').value = '';
+            document.getElementById('valor3').value = '';
+            document.getElementById('tol').value = 'S';
+            document.getElementById('resultado').innerText = '';
+        }
+    </script>
+</body>
+
+</html>
