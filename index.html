@@ -4,12 +4,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Eloy Agostinho Come</title>
+    <title>Eloy Agostinho Come | Portfólio</title>
 
-<link rel="stylesheet" href="CSS/index-pr.css">
+    <link rel="stylesheet" href="CSS/index-pr.css">
     <link href="Icones/Eloy.jpg" rel="Eloy Agostinho Come">
 
-  
+
 </head>
 
 <body>
@@ -45,7 +45,10 @@
 
         <p>
             Sou apaixonado por eletrônica, programação e desenvolvimento de projetos tecnológicos.
-             Se deseja falar comigo, tirar duvidas, partilhar ideias ou conversar sobre tecnologia e eletrônica, pode clicar no botão "contactos" no cabeçalho e teras os Icones de contactos. Fale comigo atraves do WhatsApp, chamadas, SMS, email ou acesse a minha pagina do facebook. Estou sempre disponível para novas conexões, projectos e amizades.
+            Se deseja falar comigo, tirar duvidas, partilhar ideias ou conversar sobre tecnologia e eletrônica, pode
+            clicar no botão "contactos" no cabeçalho e teras os Icones de contactos. Fale comigo atraves do WhatsApp,
+            chamadas, SMS, email ou acesse a minha pagina do facebook. Estou sempre disponível para novas conexões,
+            projectos e amizades.
         </p>
 
         <h2>Informações Pessoais</h2>
@@ -72,8 +75,10 @@
             <div id="infoEletronica" class="conteudo-dinamico">
 
                 <p>
-                    A eletrônica é a base da tecnologia moderna, permitindo criar circuitos inteligentes e soluções inovadoras.
-                    De seguida teremos o painel de projectos onde teremos aulas sobre alguns componentes mais usados na eletronica. 
+                    A eletrônica é a base da tecnologia moderna, permitindo criar circuitos inteligentes e soluções
+                    inovadoras.
+                    De seguida teremos o painel de projectos onde teremos aulas sobre alguns componentes mais usados na
+                    eletronica.
                 </p>
 
             </div>
@@ -90,19 +95,16 @@
 
             <div class="abas-container">
 
-                <button class="btn-aba"
-                    id="aba-capacitores"
-                    onclick="processarAba('capacitores')">
+                <button class="btn-aba" id="aba-capacitores" onclick="processarAba('capacitores')">
 
                     Capacitores
                 </button>
 
-                <button class="btn-aba"
-                    id="aba-resistores"
-                    onclick="processarAba('resistores')">
+                <button class="btn-aba" id="aba-resistores" onclick="processarAba('resistores')">
 
                     Resistores
                 </button>
+                <button class="btn-aba" id="aba-diodos" onclick="processarAba('diodos')">Diodos</button>
 
             </div>
 
@@ -123,41 +125,47 @@
         </div>
 
         <p class="fecho">
-            Inovação, Tecnologia  e  Eletrônica
+            Inovação, Tecnologia e Eletrônica
         </p>
 
         <!-- FOOTER -->
-        <footer>
-
+        <footer id="foot">
             <div class="footer-links">
+                <a href="https://wa.me/849231525" class="footer-link" target="_blank">
+                    <img class="footer-img"
+                        src="https://wallpapers.com/images/hd/whats-app-logo-icon-green-background-gqlmss4910yp6h34.png"
+                        alt="WhatsApp">
 
-                <a href="https://wa.me/849231525" target="_blank">
-                    <img class="footer-img" src="Icones/whatsApp.jpg">
                 </a>
+                <a href="https://www.facebook.com/profile.php?id=61586937477414" target="_blank" class=" footer-link">
+                    <img class="footer-img"
+                        src="Icones/Facebook.jpg"
+                        alt="Facebook">
 
-                <a href="https://www.facebook.com/profile.php?id=61586937477414" target="_blank">
-                    <img class="footer-img" src="Icones/facebook.jpg">
                 </a>
+                <a href="sms:+258849231525?body=Ola%20Eloy%20Come,%20puxei%20o%20teu%20site.%20Podemos%20conversar%20?"
+                    class="footer-link">
+                    <img class="footer-img" src="https://img.freepik.com/premium-vector/mobile_1031082-2271.jpg"
+                        alt="Chat">
 
-              <a href="sms:+258849231525?body=Ola%20Eloy%20Come,%20puxei%20o%20teu%20site.%20Podemos%20conversar%20?" class="footer-link">
-                    <img class="footer-img" src="Icones/chat.jpg" alt="Chat">
-
-                <a href="tel:+258849231525">
-                    <img class="footer-img" src="Icones/chamada.jpg">
                 </a>
+                <a href="tel:+258849231525" class="footer-link">
+                    <img class="footer-img"
+                        src="https://static.vecteezy.com/system/resources/previews/027/690/750/non_2x/phone-icon-design-vector.jpg"
+                        alt="Telefone">
 
-                <a href="mailto:celoyagostinho@gmail.com">
-                    <img class="footer-img" src="Icones/gmail.jpg">
                 </a>
+                <a href="mailto:celoyagostinho@gmail.com" class="footer-link">
+                    <img class="footer-img"
+                        src="https://static.vecteezy.com/system/resources/previews/021/514/701/non_2x/google-gmail-logo-symbol-design-illustration-with-black-background-free-vector.jpg"
+                        alt="Gmail">
 
+                </a>
             </div>
-
-            <p>
+            <p class="footer-copyright">
                 &copy; 2026 Todos os direitos reservados.
             </p>
-
         </footer>
-
     </div>
 
     <!-- JAVASCRIPT -->
@@ -228,6 +236,10 @@
                 document.getElementById('aba-resistores')
                     .classList.add('active');
             }
+            if (idProjeto === 'diodos') {
+                document.getElementById('aba-diodos')
+                    .classList.add('active');
+            }
 
             // BARRA
             wrapperBarrinha.style.display = "block";
@@ -264,6 +276,9 @@
 
                     window.location.href =
                         "Resistor/index.html";
+                }
+                if (idProjeto === "diodos") {
+                    window.location.href = "Diodo/index.html";
                 }
 
             }, 1000);

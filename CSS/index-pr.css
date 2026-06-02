@@ -1,235 +1,332 @@
+/* ==========================================================================
+   1. ESTILOS GERAIS E RESET
+   ========================================================================== */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
 
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
+body {
+    width: 100%;
+    max-width: 800px; /* Alvo principal para leitura confortável */
+    margin: 0 auto;
+    padding: 15px;
+    font-family: system-ui, sans-serif;
+    background-color: #001219;
+    color: #ffffff;
+    line-height: 1.6;
+}
 
-        body {
-            width: 100%;
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 15px;
-            font-family: system-ui, sans-serif;
-            background-color: #001219;
-            color: #ffffff;
-            line-height: 1.6;
-        }
-        
+/* ==========================================================================
+   2. LAYOUT E CONTEÚDO PRINCIPAL
+   ========================================================================== */
+.main-container {
+    background-color: #001822;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.6);
+    border: 1px solid #0a9396;
+    margin-top: 15px;
+}
 
-        .main-container {
-            background-color: #001822;
-            padding: 25px;
-            border-radius: 12px;
-            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.6);
-            border: 1px solid #0a9396;
-            margin-top: 15px;
-        }
+h1 {
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 2.5rem;
+    text-align: center;
+    margin-top: 10px;
+    color: #e9d8a6;
+}
 
-        h1 {
-            font-family: 'Times New Roman', Times, serif;
-            font-size: 2.5rem;
-            text-align: center;
-            margin-top: 10px;
-            color: #e9d8a6;
-        }
+h2 {
+    font-size: 1.3rem;
+    color: #94d2bd;
+    border-bottom: 2px solid #0a9396;
+    padding-bottom: 5px;
+    margin-top: 30px;
+    margin-bottom: 15px;
+}
 
-        h2 {
-            font-size: 1.3rem;
-            color: #94d2bd;
-            border-bottom: 2px solid #0a9396;
-            padding-bottom: 5px;
-            margin-top: 30px;
-            margin-bottom: 15px;
-        }
+p {
+    font-size: 1rem;
+    text-align: justify;
+    margin-bottom: 15px;
+}
 
-        p {
-            font-size: 1rem;
-            text-align: justify;
-            margin-bottom: 15px;
-        }
+/* Imagem de Perfil */
+.IG {
+    text-align: center;
+    padding: 15px 0;
+    
+}
 
-        .IG {
-            text-align: center;
-            padding: 15px 0;
-        }
+.IG img {
+    height: 90px;
+    width: 90px;
+    border: 3px solid #0a9396;
+    border-radius: 50%;
+    object-fit: cover;
+    box-shadow: 0 0 15px rgba(10, 147, 150, 0.5);
+}
 
-        .IG img {
-            height: 130px;
-            width: 130px;
-            border: 3px solid #0a9396;
-            border-radius: 50%;
-            object-fit: cover;
-            box-shadow: 0 0 15px rgba(10, 147, 150, 0.5);
-        }
+.info-pessoal {
+    list-style: none;
+    margin: 20px 0;
+}
 
-        .info-pessoal {
-            list-style: none;
-            margin: 20px 0;
-        }
+.info-pessoal li {
+    margin-bottom: 10px;
+    font-size: 1.05rem;
+}
 
-        .info-pessoal li {
-            margin-bottom: 10px;
-            font-size: 1.05rem;
-        }
+.info-pessoal strong {
+    color: #e9d8a6;
+}
 
-        .info-pessoal strong {
-            color: #e9d8a6;
-        }
+/* ==========================================================================
+   3. COMPONENTES INTERATIVOS
+   ========================================================================== */
+.box-interativa {
+    background-color: #001e26;
+    border: 2px dashed #0a9396;
+    border-radius: 10px;
+    padding: 20px;
+    margin: 30px 0;
+    text-align: center;
+}
 
-        .box-interativa {
-            background-color: #001e26;
-            border: 2px dashed #0a9396;
-            border-radius: 10px;
-            padding: 20px;
-            margin: 30px 0;
-            text-align: center;
-        }
+.btn-js {
+    background-color: #0a9396;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1rem;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+}
 
-        .btn-js {
-            background-color: #0a9396;
-            color: white;
-            border: none;
-            padding: 10px 20px;
-            font-size: 1rem;
-            font-weight: bold;
-            border-radius: 5px;
-            cursor: pointer;
-            transition: 0.3s;
-        }
+.btn-js:hover {
+    background-color: #94d2bd;
+    color: #001219;
+}
 
-        .btn-js:hover {
-            background-color: #94d2bd;
-            color: #001219;
-        }
+.conteudo-dinamico {
+    margin-top: 20px;
+    text-align: left;
+    display: none;
+}
 
-        .conteudo-dinamico {
-            margin-top: 20px;
-            text-align: left;
-            display: none;
-        }
+/* ==========================================================================
+   4. SECÇÃO DE PROJETOS E ABAS
+   ========================================================================== */
+.secao-projetos {
+    background-color: #00222e;
+    border: 2px solid #0a9396;
+    border-radius: 10px;
+    padding: 20px;
+    margin: 30px 0;
+}
 
-        .secao-projetos {
-            background-color: #00222e;
-            border: 2px solid #0a9396;
-            border-radius: 10px;
-            padding: 20px;
-            margin: 30px 0;
-        }
+.abas-container {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 15px;
+    flex-wrap: wrap; /* Evita o estouro horizontal empilhando se necessário */
+}
 
-        .abas-container {
-            display: flex;
-            gap: 10px;
-            margin-bottom: 15px;
-        }
+.btn-aba {
+    flex: 1;
+    min-width: 100px;
+    padding: 12px;
+    background-color: #001219;
+    border: 1px solid #0a9396;
+    color: #94d2bd;
+    font-weight: bold;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
 
-        .btn-aba {
-            flex: 1;
-            padding: 12px;
-            background-color: #001219;
-            border: 1px solid #0a9396;
-            color: #94d2bd;
-            font-weight: bold;
-            border-radius: 6px;
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
+.btn-aba:hover,
+.btn-aba.active {
+    background-color: #00f5d4;
+    color: #001219;
+    border-color: #00f5d4;
+}
 
-        .btn-aba:hover,
-        .btn-aba.active {
-            background-color: #00f5d4;
-            color: #001219;
-            border-color: #00f5d4;
-        }
+/* Barra de Progresso */
+.progress-container {
+    width: 100%;
+    height: 4px;
+    background-color: #001219;
+    border-radius: 2px;
+    overflow: hidden;
+    margin-bottom: 15px;
+    display: none;
+}
 
-        .progress-container {
-            width: 100%;
-            height: 4px;
-            background-color: #001219;
-            border-radius: 2px;
-            overflow: hidden;
-            margin-bottom: 15px;
-            display: none;
-        }
+.progress-bar {
+    width: 0%;
+    height: 100%;
+    background-color: #00f5d4;
+    transition: width 0.3s ease;
+}
 
-        .progress-bar {
-            width: 0%;
-            height: 100%;
-            background-color: #00f5d4;
-            transition: width 0.3s ease;
-        }
+.visor-projeto {
+    background-color: #001219;
+    border: 1px solid #0a9396;
+    border-radius: 6px;
+    padding: 15px;
+    min-height: 80px;
+}
 
-        .visor-projeto {
-            background-color: #001219;
-            border: 1px solid #0a9396;
-            border-radius: 6px;
-            padding: 15px;
-            min-height: 80px;
-        }
+/* Bloco de Fecho */
+.fecho {
+    text-align: center;
+    padding: 15px;
+    background-color: #1d3557;
+    border: 2px solid #0a9396;
+    border-radius: 8px;
+    font-size: 1.2rem;
+    font-style: italic;
+    margin-top: 30px;
+}
 
-        .fecho {
-            text-align: center;
-            padding: 15px;
-            background-color: #1d3557;
-            border: 2px solid #0a9396;
-            border-radius: 8px;
-            font-size: 1.2rem;
-            font-style: italic;
-            margin-top: 30px;
-        }
+/* ==========================================================================
+   5. RODAPÉ / FOOTER
+   ========================================================================== */
+footer {
+    background-color: #00252e;
+    padding: 25px 15px;
+    text-align: center;
+    margin-top: 40px;
+    border-radius: 8px 8px 0 0;
+    clear: both;
+}
 
-        footer {
-            background-color: #00252e;
-            padding: 25px 15px;
-            text-align: center;
-            margin-top: 40px;
-            border-radius: 8px 8px 0 0;
-        }
+.footer-links {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+}
 
-        .footer-links {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            flex-wrap: wrap;
-            margin-bottom: 20px;
-        }
+.footer-img {
+    width: 40px;
+    height: 40px;
+    border: 2px solid #94d2bd;
+    border-radius: 50%;
+    transition: 0.2s;
+}
 
-        .footer-img {
-            width: 40px;
-            height: 40px;
-            border: 2px solid #94d2bd;
-            border-radius: 50%;
-            transition: 0.2s;
-        }
+.footer-img:hover {
+    transform: scale(1.1);
+}
 
-        .footer-img:hover {
-            transform: scale(1.1);
-        }
+/* ==========================================================================
+   6. ESTRUTURAS DE TELA CHEIA (OFFLINE)
+   ========================================================================== */
+#status-offline {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: #001219;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 10000;
+    padding: 20px;
+    text-align: center;
+}
 
-        #status-offline {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100vw;
-            height: 100vh;
-            background-color: #001219;
-            display: none;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            z-index: 10000;
-            padding: 20px;
-            text-align: center;
-        }
+.robo-animado {
+    font-size: 70px;
+    margin-bottom: 20px;
+}
 
-        .robo-animado {
-            font-size: 70px;
-            margin-bottom: 20px;
-        }
- /* --- MEDIA QUERIES --- */
-        @media (max-width: 600px) {
-            h1 { font-size: 2.2rem; }
-            h2, h3 { font-size: 1.2rem; }
-            p { font-size: 0.95rem; }
-            fieldset { padding: 15px; }
-        }
+/* ==========================================================================
+   7. MEDIA QUERIES MULTI-ECRÃ (TODOS OS BREAKPOINTS)
+   ========================================================================== */
+
+/* --- 1380px (Monitores Grandes / Ultra-wide / Zoom Reduzido) --- */
+@media (min-width: 1380px) {
+    body {
+        max-width: 1000px; /* Alarga ligeiramente o contentor principal para aproveitar o espaço */
+        padding: 30px;
+    }
+    .main-container {
+        padding: 40px;
+    }
+    h1 { font-size: 3rem; }
+}
+
+/* --- 780px (Tablets / Ecrãs Intermédios) --- */
+@media (max-width: 780px) {
+    body {
+        padding: 12px;
+    }
+    .main-container {
+        padding: 20px;
+    }
+    h1 { font-size: 2.3rem; }
+    h2 { font-size: 1.25rem; }
+}
+
+/* --- 480px (Telemóveis em Modo Paisagem / Smartphones Médios) --- */
+@media (max-width: 480px) {
+    h1 { font-size: 2rem; }
+    p { font-size: 0.95rem; text-align: left; /* Melhora leitura em ecrãs estreitos */ }
+    
+    .btn-aba {
+        padding: 10px;
+        font-size: 0.9rem;
+        flex: 1 1 calc(50% - 10px); /* Garante uma divisão limpa em duas colunas se necessário */
+    }
+    
+    footer {
+        margin-top: 50px;
+    }
+    .footer-links {
+        gap: 15px;
+    }
+}
+
+/* --- 380px (Telemóveis Muito Pequenos / Zoom Próximo do Máximo) --- */
+@media (max-width: 380px) {
+    body {
+        padding: 8px;
+    }
+    .main-container {
+        padding: 15px;
+    }
+    h1 { font-size: 1.75rem; }
+    h2 { font-size: 1.15rem; }
+    
+    /* Configuração Crítica das Abas */
+    .abas-container {
+        gap: 8px;
+    }
+    .btn-aba {
+        font-size: 0.85rem;
+        padding: 10px 5px;
+        flex: 1 1 100%; /* Cada botão ganha uma linha própria para nunca quebrar o texto ou saltar do quadro */
+        min-width: 100%;
+        text-align: center;
+    }
+    
+    /* Espaçamento extra para o rodapé não colidir com o bloco superior */
+    footer {
+        margin-top: 60px;
+        padding: 20px 5px;
+    }
+    .footer-img {
+        width: 32px;
+        height: 32px;
+    }
+}
